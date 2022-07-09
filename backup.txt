@@ -1,0 +1,57 @@
+{
+    "python.formatting.provider": "black",
+    "cSpell.enabled": false
+}from binhex import openrsrc
+from .client import Client
+import json;
+import os;
+
+data_JSON =  """
+{
+	"size": "Medium",
+	"price": 15.67,
+	"toppings": ["Mushrooms", "Extra Cheese", "Pepperoni", "Basil"],
+	"client": {
+		"name": "Jane Doe",
+		"phone": "455-344-234",
+		"email": "janedoe@email.com"
+	}
+}
+"""
+
+data_dict = json.loads(data_JSON);
+
+#print(data_dict);
+#print(data_dict["size"]);
+
+
+client = {
+    "name": "Nora",
+    "age": 56,
+    "id": "45355",
+    "eye_color": "green",
+    "wears_glasses": False
+}
+client_JSON = json.dumps(client, indent=2, sort_keys=True);
+ 
+# print(client_JSON);
+
+client_ = {
+    "size": "Medium",
+	"price": 15.67,
+	"toppings": ["Mushrooms", "Extra Cheese", "Pepperoni", "Basil"],
+	"client": {
+		"name": "Jane Doe",
+		"phone": "455-344-234",
+		"email": "janedoe@email.com"
+	}
+}
+client_json_ = json.dumps(client_, indent=2, sort_keys=True);
+# print(client_json_);
+
+# Aqui ó
+def OpenAndReadJsonFile():
+    with open(r"C:\Users\shado\Desktop\Projeto-estudo-py\json\orders.json", "r") as file:  # com o r na frente ele ignora a formatação de string do python.
+        data = json.dumps(file, indent=2, sort_keys=True);
+
+#OpenAndReadJsonFile()
